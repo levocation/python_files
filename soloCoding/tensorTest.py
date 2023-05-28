@@ -1,7 +1,9 @@
 import tensorflow as tf
 import numpy as np
 x_train = [1, 2, 3, 4, 5, 6, 7]
-y_train = [25000, 55000, 75000, 110000, 128000, 155000, 188000]
+y_train = [2, 3, 4, 5, 6, 7, 8]
+
+print("START")
 
 # tf.random.uniform(shape=[arraySize, ...], minval=minvalueNumber, maxval=maxvalueNumber)
 # [arraySize, ...] 공간 안에 minval 이상 maxval 이하의 랜덤값을 투입
@@ -36,12 +38,12 @@ model.add(tf.keras.layers.Dense(1, input_dim = 1)) # Sequential 모델을 생성
 # activity_regularizer : 출력 값 정규화 방법
 # kernel_constraint : 가중치에 적용되는 부가적인 제약 함수
 # bias_constraint : 편향에 적용되는 부가적인 제약 함수
- 
+
 model.compile(loss='mean_squared_error',optimizer=sgd, metrics=[tf.keras.metrics.RootMeanSquaredError()]) # 손실함수로 mean_squared_error 를 , 옵티마이저로 sgd를 설정
 # 옵티마이저 (Optimizer)는 손실 함수을 통해 얻은 손실값으로부터 모델을 업데이트하는 방식을 의미합니다.
 # mean_squared_error : (예측값 - 실제값)²
 
-model.fit(x_train,y_train,epochs=2500) # epochs 수 만큼 훈련을 진행한다.
+model.fit(x_train,y_train,epochs=1000) # epochs 수 만큼 훈련을 진행한다.
 
 # model.fit() 인자값 종류
 # x=None,                     | 입력 데이터 (x값)
