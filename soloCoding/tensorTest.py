@@ -1,7 +1,7 @@
 import tensorflow as tf
 import numpy as np
 x_train = [1, 2, 3, 4, 5, 6, 7]
-y_train = [2, 3, 4, 5, 6, 7, 8]
+y_train = [1, 1, 1, 1, 1, 1, 1]
 
 print("START")
 
